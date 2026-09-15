@@ -42,7 +42,23 @@ export default function Inicio(){
     //------------------------------------
     // Bloco 2.1 - Seção jogos
     // -----------------------------------
-
+<text style={StyleSheet.secaoTitulo}>Jogos em destaque</text>
+{/* Exibe o titulo desta seção, usando o estilo "secaotitulo" */}
+<FlatList
+data={destaques}
+//define a fonte de dados da lisa - array "destaques"
+keyExtractor={(item) => item.id}
+// Função que retorna uma chave única
+horizontal
+// faz a lista rolar
+showsVerticalScrollIndicator={false}
+//oculta a barrinha de rolagem horizontal, deixando a interface mais limpa
+renderItem={({item}) => <Gamecard jogo={item}/>}
+//função chamanda para cada elemento do array "data"
+/>
+   //------------------------------------
+    // Bloco 2.1 - Seção jogos
+    // -----------------------------------
 
         </scollView>
     );
